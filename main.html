@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Styles/main.css">
+</head>
+<body>
+    <img src="Imagens/Windows logo.png" alt="Logo windows">
+    <h1 id="title">Defina seu nome e senha:</h1>
+    <div class="def">
+        <input type="text" id="usuario" placeholder="Digite o seu nome...">
+        <p id="mensagem1"></p>
+        <input type="text" id="senha" placeholder="Digite a sua senha...">
+        <p id="mensagem2"></p> 
+        <button id="button" onclick="cadastro()">Confirmar</button>
+    </div>
+    
+    <script>
+        function abrir (){
+            window.location.href = 'index.html';
+        }
+        function cadastro(){
+            const button = document.getElementById('button');
+            const usuario = document.getElementById('usuario');
+            const senha = document.getElementById('senha');
+            const nomeUsuario = usuario.value.trim();
+            const valorSenha = senha.value.trim();
+            const confimeSenha = document.getElementById('confirmeSenha');
+             if (nomeUsuario === ''){
+                mensagem1.textContent = 'Defina um nome de usuario!';
+                mensagem1.style.color = 'red';
+                
+             }
+             if (valorSenha === '' ){
+                mensagem2.textContent = 'Defina uma senha!';
+                mensagem2.style.color = 'red';
+             } 
+             if (valorSenha === '' && nomeUsuario != ''){
+                mensagem2.textContent = 'Defina uma senha!';
+                mensagem2.style.color = 'red';
+                mensagem1.textContent = ''
+             }
+             if (nomeUsuario === '' && valorSenha != ''){
+                mensagem1.textContent = 'Digite um nome de ususário!';
+                mensagem1.style.color = 'red';
+                mensagem2.textContent = ''
+             }
+             if (nomeUsuario && valorSenha !== '' ){
+                usuario.remove(nomeUsuario);
+                senha.remove(valorSenha);
+                button.style.display = 'none';
+                title.textContent = 'Agurade um pouco...'
+                mensagem1.style.display = 'none';
+                mensagem2.textContent = 'Cadastrando usuário...';
+                mensagem2.style.color = 'white'
+                setTimeout(abrir,2500);
+                localStorage.setItem('nomeUsuario',nomeUsuario);
+                localStorage.setItem('valorSenha',valorSenha);
+             }
+        }
+
+    </script>
+</body>
+</html>

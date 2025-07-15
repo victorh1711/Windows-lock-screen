@@ -1,0 +1,74 @@
+body{
+    background-image: url(https://wallpapers.com/images/featured/windows-qjwaebanu8widtia.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.4);
+    background-blend-mode: multiply;
+    background-attachment:fixed ;
+}
+img{
+    border: 3px solid rgb(49, 48, 48);
+    border-radius: 50%;
+    height: 300px;
+    width: 300px;
+    margin-bottom: 20px;
+    opacity: 0.85;
+}
+h1{
+    color: white;
+    font-size: 35px;
+    font-family: arial;
+    margin-top: -20px;
+    margin-bottom: 5px;
+}
+.main{
+    display: flex; 
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+}
+input{
+    height: 25px;
+    width: 300px;
+    border: 3px solid rgb(75, 133, 169);
+    border-radius:10px;
+    background-color: rgba(0, 0, 0, 0.285);
+    color: white;
+    font-size: 17px;
+    font-family: arial;
+    text-align: center;
+}
+.mensagem{
+    font-size: 20px;
+    color: white;
+}
+button{
+    width: 55px;
+    height: 20px;
+    background-color:rgba(255, 255, 255, 0.754);
+    margin-top: 10px;
+    border-radius: 10px;
+    font-weight: bolder;
+    border: 2px solid gray;
+}
+button:active{
+    background-color:rgba(136, 136, 136, 0.754);
+    margin-top: 10px;
+    border-radius: 10px;
+    font-weight: bolder;
+    border: 2px solid gray;
+}
+.mostrar{
+    width: 30px;
+    height: 30px;
+    background-color:rgba(0, 0, 0, 0.555);
+}
+.ocultar{
+    width: 30px;
+    height: 30px;
+    background-color: lightskyblue;
+    color: white;
+    border: 1px solid black;
+}
