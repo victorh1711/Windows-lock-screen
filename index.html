@@ -4,61 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="Styles/index.css">
+    <link rel="stylesheet" href="Styles/main.css">
 </head>
 <body>
-
-    <section class="main">
-      <img src="Imagens/Foto de perfil.jpg" alt="Foto de perfil: none">
-      <h1 id="nome"></h1>
-      <div>
-        <button id="exibir" class="mostrar">#</button>
-        <input type="password" id="input" placeholder="Digite sua senha..."> 
-      </div>
-      <button id="button" onclick="teste()">Entrar</button>
-      <p id="mensagem" class="mensagem"></p>
-    </section>
+    <img src="Imagens/Windows logo.png" alt="Logo windows">
+    <h1 id="title">Defina seu nome e senha:</h1>
+    <div class="def">
+        <input type="text" id="usuario" placeholder="Digite o seu nome...">
+        <p id="mensagem1"></p>
+        <input type="text" id="senha" placeholder="Digite a sua senha...">
+        <p id="mensagem2"></p> 
+        <button id="button" onclick="cadastro()">Confirmar</button>
+    </div>
     
     <script>
-       nome.textContent = localStorage.getItem('nomeUsuario')
-       
+        function abrir (){
+            window.location.href = 'index.html';
+        }
+        function cadastro(){
+            const button = document.getElementById('button');
+            const usuario = document.getElementById('usuario');
+            const senha = document.getElementById('senha');
+            const nomeUsuario = usuario.value.trim();
+            const valorSenha = senha.value.trim();
+            const confimeSenha = document.getElementById('confirmeSenha');
+             if (nomeUsuario === ''){
+                mensagem1.textContent = 'Defina um nome de usuario!';
+                mensagem1.style.color = 'red';
+                
+             }
+             if (valorSenha === '' ){
+                mensagem2.textContent = 'Defina uma senha!';
+                mensagem2.style.color = 'red';
+             } 
+             if (valorSenha === '' && nomeUsuario != ''){
+                mensagem2.textContent = 'Defina uma senha!';
+                mensagem2.style.color = 'red';
+                mensagem1.textContent = ''
+             }
+             if (nomeUsuario === '' && valorSenha != ''){
+                mensagem1.textContent = 'Digite um nome de ususário!';
+                mensagem1.style.color = 'red';
+                mensagem2.textContent = ''
+             }
+             if (nomeUsuario && valorSenha !== '' ){
+                usuario.remove(nomeUsuario);
+                senha.remove(valorSenha);
+                button.style.display = 'none';
+                title.textContent = 'Agurade um pouco...'
+                mensagem1.style.display = 'none';
+                mensagem2.textContent = 'Cadastrando usuário...';
+                mensagem2.style.color = 'white'
+                setTimeout(abrir,2500);
+                localStorage.setItem('nomeUsuario',nomeUsuario);
+                localStorage.setItem('valorSenha',valorSenha);
+             }
+        }
 
-        function abrir(){
-          window.location.href = 'home.html'
-        }
-        function teste(){
-         const input = document.getElementById('input');
-         const button = document.getElementById('button');
-         const exibir = document.getElementById('exibir')
-         const valor = input.value.trim();
-         const senhaReal = localStorage.getItem('valorSenha')
-           if(valor === senhaReal){
-             mensagem.textContent = 'Carregando sistema...';
-             input.remove(valor)
-             exibir.style.display = 'none'
-             button.style.display = 'none';
-             setTimeout(abrir,2500);
-           } 
-           if(valor !==  senhaReal){
-             mensagem.textContent = 'Senha incorreta';
-           }
-           if(valor === ''){
-            mensagem.textContent = 'O campo está vazio'
-           }
-      }
-       const exibir = document.getElementById('exibir');
-       const input = document.getElementById('input')
-        exibir.addEventListener('click', function(){
-        if(input.type === 'password'){
-          exibir.classList.remove('mostrar');
-          exibir.classList.add('ocultar');
-          input.type = 'text'
-        } else if(input.type === 'text'){
-          exibir.classList.remove('ocultar');
-          exibir.classList.add('mostrar')
-          input.type = 'password'
-        }
-      }) 
     </script>
 </body>
 </html>
