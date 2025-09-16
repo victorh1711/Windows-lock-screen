@@ -1,74 +1,85 @@
 body{
-    background-image: url(https://wallpapers.com/images/featured/windows-qjwaebanu8widtia.jpg);
+    background-image: url(https://tm.ibxk.com.br///2016/08/05/05191557555622.jpg?ims=1200x675);
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-    background-color: rgba(0, 0, 0, 0.4);
     background-blend-mode: multiply;
-    background-attachment:fixed ;
-}
-img{
-    border: 3px solid rgb(49, 48, 48);
-    border-radius: 50%;
-    height: 300px;
-    width: 300px;
-    margin-bottom: 20px;
-    opacity: 0.85;
-}
-h1{
-    color: white;
-    font-size: 35px;
-    font-family: arial;
-    margin-top: -20px;
-    margin-bottom: 5px;
-}
-.main{
-    display: flex; 
-    justify-content: center;
+    background-attachment: fixed;   
+    display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 30px;
+
 }
-input{
+.type{
+    display: flex;
+    flex-direction: row;
+}
+.image{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+.title{
+    color: rgb(0, 150, 255);
+    font-size: 90px;
+    font-family: 'Segoe UI';
+    font-weight: 400;
+    margin: 0px;    
+}
+.nameInput{
+    width: 350px;
+    height: 35px;
+    border: 2px solid gray;
+    border-radius: 10px;
+    font-size: 18px;
+    font-family: Arial;
+    padding-left: 3px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    transition: all 1s ease;
+    margin-top: 40px;
+}
+.passwordInput{
+    width: 350px;
+    height: 35px;
+    border: 2px solid gray;
+    border-radius: 10px;
+    font-size: 18px;
+    font-family: Arial;
+    padding-left: 3px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    transition: all 1s ease;
+    margin-top: 40px;
+}
+.nameInput:focus, .passwordInput:focus{
+    box-shadow: 5px 5px 10px rgba(255, 255, 255, 0.5);
+}
+.setData{
+    width: 100px;
     height: 25px;
-    width: 300px;
-    border: 3px solid rgb(75, 133, 169);
-    border-radius:10px;
-    background-color: rgba(0, 0, 0, 0.285);
-    color: white;
-    font-size: 17px;
-    font-family: arial;
-    text-align: center;
-}
-.mensagem{
-    font-size: 20px;
-    color: white;
-}
-button{
-    width: 55px;
-    height: 20px;
-    background-color:rgba(255, 255, 255, 0.754);
-    margin-top: 10px;
-    border-radius: 10px;
+    border: 2px solid black;
+    border-radius: 5px;
+    font-size: 15px;
+    font-family: Arial;
     font-weight: bolder;
-    border: 2px solid gray;
-}
-button:active{
-    background-color:rgba(136, 136, 136, 0.754);
-    margin-top: 10px;
-    border-radius: 10px;
-    font-weight: bolder;
-    border: 2px solid gray;
-}
-.mostrar{
-    width: 30px;
-    height: 30px;
-    background-color:rgba(0, 0, 0, 0.555);
-}
-.ocultar{
-    width: 30px;
-    height: 30px;
-    background-color: lightskyblue;
+    background-color: gray;
     color: white;
-    border: 1px solid black;
+    transition: all 0.1s ease;
+    margin: 20px;
+}
+.setData:active{
+    background-color: rgb(0, 150, 255);
+    width: 105px;
+    height: 27px;
+    text-shadow: 3px 3px 5px blue;   
+}
+.nameMessage, .passwordMessage{
+    font-size: 16px;
+    font-family: Arial;
+    font-weight: bolder;
+    color: white;
+    padding: 5px;
+    margin: 0px ;
+    display: none;
 }
