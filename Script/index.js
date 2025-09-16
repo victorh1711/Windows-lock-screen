@@ -22,7 +22,7 @@ function test(){
 button.addEventListener("click", () =>{
     test()
         .then(res =>{
-            if(res.setPassword.leght >= 8){
+            if(res.setPassword.length > 6){
                 localStorage.setItem("setName", res.setName);
                 localStorage.setItem("setPassword", res.setPassword);
                 title.textContent = "Aguarde...";
@@ -32,6 +32,7 @@ button.addEventListener("click", () =>{
                 passwordMessage.style.display = "block";
                 passwordMessage.style.color = "white";
                 passwordMessage.textContent = "cadastrando usuário...";
+                passwordMessage.style.borderBottom = "none"
                 setTimeout(() => {
                     window.location.href = "main.html";
                 }, 5000);
@@ -40,7 +41,7 @@ button.addEventListener("click", () =>{
                 passwordMessage.style.display = "block";
                 passwordMessage.style.color = "yellow";
                 passwordMessage.style.borderBottom = "2px solid yellow"
-                passwordMessage.textContent = "A senha deve ter 8 ou mais dígitos";
+                passwordMessage.textContent = "A senha deve ter mais de 6 dígitos";
             }
         })
         .catch(err =>{
