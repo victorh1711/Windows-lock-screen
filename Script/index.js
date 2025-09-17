@@ -44,6 +44,14 @@ setData.addEventListener("click", () =>{
                 passwordMessage.style.color = "yellow";
                 passwordMessage.style.borderBottom = "2px solid yellow"
                 passwordMessage.textContent = "A senha deve ter mais de 6 dígitos";
+                setTimeout(() => {
+                nameMessage.style.display = "none"
+                passwordMessage.style.display = "none";
+                passwordMessage.style.color = "none";
+                passwordMessage.style.borderBottom = "none"
+                passwordMessage.textContent = "";
+                
+                }, 1000);
             }
         })
         .catch(err =>{
