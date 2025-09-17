@@ -3,7 +3,7 @@ const nameInput = document.getElementById("nameInput");
 const passwordInput = document.getElementById("passwordInput");
 const nameMessage = document.getElementById("nameMessage");
 const passwordMessage = document.getElementById("passwordMessage");
-const button = document.getElementById("setData");
+const setData = document.getElementById("setData");
 
 function test(){
     return new Promise((resolve, reject) => {
@@ -19,16 +19,18 @@ function test(){
         }, 2000);
 }
 
-button.addEventListener("click", () =>{
+setData.addEventListener("click", () =>{
     test()
         .then(res =>{
             if(res.setPassword.length > 6){
                 localStorage.setItem("setName", res.setName);
                 localStorage.setItem("setPassword", res.setPassword);
                 title.textContent = "Aguarde...";
+                title.style.animation = "pulse "
+                title.style.animationIterationCount = "infinite"
                 nameInput.style.display = "none";
                 passwordInput.style.display = "none";
-                button.style.display = "none";
+                setData.style.display = "none";
                 passwordMessage.style.display = "block";
                 passwordMessage.style.color = "white";
                 passwordMessage.textContent = "cadastrando usuário...";

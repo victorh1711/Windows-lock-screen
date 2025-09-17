@@ -24,7 +24,18 @@ body{
     font-size: 90px;
     font-family: 'Segoe UI';
     font-weight: 400;
-    margin: 0px;    
+    margin: 0px;   
+}
+@keyframes pulse {
+    10%{
+        text-shadow: 2px 2px 5px rgba(0, 0, 255, 0.8);
+    }
+    50%{
+        text-shadow: 2px 2px 5px rgba(0, 0, 255, 0.5);
+    }
+    100%{
+        text-shadow: 2px 2px 5px rgba(0, 0, 255, 0.2)
+    }
 }
 .nameInput{
     width: 350px;
