@@ -26,8 +26,8 @@ setData.addEventListener("click", () =>{
                 localStorage.setItem("setName", res.setName);
                 localStorage.setItem("setPassword", res.setPassword);
                 title.textContent = "Aguarde...";
-                title.style.animation = "pulse "
-                title.style.animationIterationCount = "infinite"
+                title.classList.remove("title")
+                title.classList.add("titleA")
                 nameInput.style.display = "none";
                 passwordInput.style.display = "none";
                 setData.style.display = "none";

@@ -26,15 +26,37 @@ body{
     font-weight: 400;
     margin: 0px;   
 }
-@keyframes pulse {
+.titleA{
+    color: rgb(0, 150, 255);
+    font-size: 90px;
+    font-family: 'Segoe UI';
+    font-weight: 400;
+    margin: 0px;  
+    animation-name: pulse;
+    animation-iteration-count: infinite;
+    animation-duration: 3s;
+}
+@keyframes pulse{
     10%{
-        text-shadow: 2px 2px 5px rgba(0, 0, 255, 0.8);
-    }
-    50%{
-        text-shadow: 2px 2px 5px rgba(0, 0, 255, 0.5);
-    }
-    100%{
-        text-shadow: 2px 2px 5px rgba(0, 0, 255, 0.2)
+        text-shadow: 5px 5px 10px rgba(0, 0, 255, 0.9);
+    }20%{
+        text-shadow: 5px 5px 10px rgba(0, 0, 255, 0.8);
+    }30%{
+        text-shadow: 5px 5px 10px rgba(0, 0, 255, 0.7);
+    }40%{
+        text-shadow: 5px 5px 10px rgba(0, 0, 255, 0.6);
+    }50%{
+        text-shadow: 5px 5px 10px rgba(0, 0, 255, 0.5);
+    }60%{
+        text-shadow: 5px 5px 10px rgba(0, 0, 255, 0.4);
+    }70%{
+        text-shadow: 5px 5px 10px rgba(0, 0, 255, 0.3);
+    }80%{
+        text-shadow: 5px 5px 10px rgba(0, 0, 255, 0.2);
+    }90%{
+        text-shadow: 5px 5px 10px rgba(0, 0, 255, 0.1);
+    }100%{
+        text-shadow: 5px 5px 10px rgba(0, 0, 255, 0.0)
     }
 }
 .nameInput{
