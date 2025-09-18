@@ -50,7 +50,6 @@ setData.addEventListener("click", () =>{
                 passwordMessage.style.color = "none";
                 passwordMessage.style.borderBottom = "none"
                 passwordMessage.textContent = "";
-                
                 }, 1000);
             }
         })

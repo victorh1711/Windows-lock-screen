@@ -1,0 +1,78 @@
+body{
+    background-image: url(https://wallpapers.com/images/featured/windows-qjwaebanu8widtia.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-blend-mode: multiply;
+    background-attachment: fixed;   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.perfil{
+    width: 310px;
+    height: 310px;
+    border: 3px solid gray;
+    border-radius: 50%;
+    opacity: 0.8;
+    margin: 0px auto;
+}
+.userName{
+    display: block;
+    font-size: 40px;
+    font-family: Arial;
+    margin: 5px auto;
+    color: white;
+}
+.identify{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 0px;
+}
+.testPassword{
+    width: 275px;
+    height: 25px;
+    border: 2px solid black;
+    border-radius: 10px;
+    border-right: 0px solid transparent;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    font-size: 18px;
+    font-family: Arial;
+    padding: 3px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+}
+.toSend{
+    width: 30px;
+    height: 35px;
+    border: 2px solid black;
+    border-radius: 5px;
+    border-left: 0px solid transparent;
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 0px;
+    background-color: rgba(128, 128, 128, 0.6);
+    color: white;
+    font-size:20px ;
+    transition: all 0.3s ease;
+}
+.toSend:active {
+    width: 30px;
+    height: 35px;
+    border: 2px solid rgb(2, 2, 172);
+    border-radius: 5px;
+    border-left: 0px solid transparent;
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 0px;
+    background-color:rgb(0, 150, 255) ;
+    color: white;
+    box-shadow: 2px 2px 5px gray;
+    font-size:20px ;
+}
+.message{
+    color: white;
+    font-size: 20px;
+    margin-top: 10px;
+}
