@@ -68,7 +68,7 @@ body{
     font-size:20px ;
     transition: all 0.3s ease;
 }
-#Showhide img{
+.iconImagem{
     height: 25px;
     height: 20px;
     margin-top: 5px;
@@ -119,5 +119,5 @@ body{
     color: white;
     font-size: 17px;
     font-family: Arial;
-    text-decoration: underline white;
+    text-decoration: under
 }

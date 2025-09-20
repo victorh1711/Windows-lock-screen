@@ -22,7 +22,7 @@ function test(){
 setData.addEventListener("click", () =>{
     test()
         .then(res =>{
-            if(res.setPassword.length > 6){
+            if(res.setPassword.length >= 6){
                 localStorage.setItem("setName", res.setName);
                 localStorage.setItem("setPassword", res.setPassword);
                 title.textContent = "Aguarde...";
@@ -35,21 +35,19 @@ setData.addEventListener("click", () =>{
                 passwordMessage.style.color = "white";
                 passwordMessage.textContent = "cadastrando usuário...";
                 passwordMessage.style.borderBottom = "none"
+                nameMessage.style.display = "none"
                 setTimeout(() => {
                     window.location.href = "main.html";
                 }, 5000);
             }else{
-                nameMessage.style.display = "none"
-                passwordMessage.style.display = "block";
-                passwordMessage.style.color = "yellow";
-                passwordMessage.style.borderBottom = "2px solid yellow"
-                passwordMessage.textContent = "A senha deve ter mais de 6 dígitos";
+                passwordInput.value = ""
+                alert("A senha deve ter mais de 6 dígitos...")
                 setTimeout(() => {
                 nameMessage.style.display = "none"
                 passwordMessage.style.display = "none";
                 passwordMessage.style.color = "none";
                 passwordMessage.style.borderBottom = "none"
-                passwordMessage.textContent = "";
+                passwordInput.Placeholder = "Defina uma senha...";
                 }, 1000);
             }
         })
@@ -62,16 +60,16 @@ setData.addEventListener("click", () =>{
                 passwordMessage.style.color = "red";
                 passwordMessage.textContent = "Defina uma senha";
             }
-            else if(err.setName === ""){
+            else if(err.setName === "" && err.setPassword != ""){
                 nameMessage.style.display = "block";
                 nameMessage.style.color = "red";
                 nameMessage.textContent = "Defina um nome";
                 passwordMessage.style.display = "none";
             }
-            else if(err.setPassword === ""){
+            else if(err.setPassword === "" && err.setName !== ""){
                 passwordMessage.style.display = "block";
                 passwordMessage.style.color = "red";
-                passwordInput.textContent = "Defina uma senha";
+                passwordMessage.textContent = "Defina uma senha";
                 nameMessage.style.display = "none";
             }
         });
