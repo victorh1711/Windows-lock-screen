@@ -10,5 +10,5 @@ function clock(){
     const dataText = `${day}/${month}/${year}  ${hour}:${minutes}`;
     dateReal.textContent = dataText
 }
-setInterval(clock, 1000)
-clock()
+setInterval(clock, 1000);
+clock();

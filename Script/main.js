@@ -12,58 +12,59 @@ console.log(userPassword)
 
 Showhide.addEventListener("click", function(){
     if(Tinput.type == "password"){
-        Tinput.type = "text"
-        icon.src = "Imagens/Adobe Express - file.png"
+        Tinput.type = "text";
+        icon.src = "Imagens/Adobe Express - file.png";
     } 
     else if(Tinput.type == "text"){
-        Tinput.type = "password"
-        icon.src = "Imagens/Olho aberto.png"
-    }
-})
+        Tinput.type = "password";
+        icon.src = "Imagens/Olho aberto.png";
+    };
+});
 
 function testInput(){
     if(Tinput.value != ""){
-        Showhide.style.display = "block"
+        Showhide.style.display = "block";
     }else{
-        Showhide.style.display = "none"
-    }
+        Showhide.style.display = "none";
+    };
 }
-loop = setInterval(testInput, 500)
-testInput()
+loop = setInterval(testInput, 500);
+testInput();
 
 async function autent(){
     return new Promise((resolve, reject) => {
         if(Tinput.value.trim() == userPassword){
-            resolve()
+            resolve();
         }
         else if(Tinput.value.trim() != userPassword){
-            reject()
-        }
-    })
-}
+            reject();
+        };
+    });
+};
+
 toSend.addEventListener("click", () => {
     autent()
         .then(res => {
             clearInterval(loop)
-            const UserNamebefore = userName.textContent
-            userName.textContent = `Bem-vindo ${UserNamebefore}`
-            Tinput.style.display = "none"
-            message.style.display = "block"
-            message.textContent = "carregando sistema..."
-            Showhide.style.display = "none"
-            toSend.style.display = "none"
+            const UserNamebefore = userName.textContent;
+            userName.textContent = `Bem-vindo ${UserNamebefore}`;
+            Tinput.style.display = "none";
+            message.style.display = "block";
+            message.textContent = "carregando sistema...";
+            Showhide.style.display = "none";
+            toSend.style.display = "none";
             setTimeout(() => {
-                window.location.href = "home.html"
+                window.location.href = "home.html";
             }, 5000);
         })
         .catch(err => {
             if(Tinput.value.trim() == ""){
-                message.style.display = "block"
-                message.textContent = "O campo está vazio"
+                message.style.display = "block";
+                message.textContent = "O campo está vazio";
             }
             else if(Tinput.value.trim() != userPassword){
-                message.style.display = "block"
-                message.textContent = "Senha incorreta"
-            }
-        })
-})
+                message.style.display = "block";
+                message.textContent = "Senha incorreta";
+            };
+        });
+});

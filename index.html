@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Windows-lock-screen</title>
     <link rel="stylesheet" href="Styles/index.css">
+    <link rel="stylesheet" href="Styles/IndexpopUp.css">
 </head>
 <body>
     <h1 class="title" id="title">Windows</h1>
@@ -14,6 +15,15 @@
     <p class="passwordMessage" id="passwordMessage"></p>
     <button class="setData" id="setData">Confirme</button>
 
-    <script src="Script/index.js"></script>     
+    <div class="content" id="content">
+        <div class="popUp" id="popUp">
+            <h1>Olá, seja bem vindo ao Windows</h1>
+            <p>Bem-vindo ao sistema Window, vamos começar?</p>
+            <button class="created" id="created">Criar conta</button>
+        </div>
+    </div>
+    
+    <script src="Script/index.js"></script> 
+    <script src="Script/indexpopUp.js"></script>
 </body>
 </html>
