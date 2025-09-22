@@ -8,6 +8,7 @@ const icon = document.getElementById("iconImagem")
 
 userName.textContent = localStorage.getItem("setName")
 const userPassword = localStorage.getItem("setPassword")
+console.log(userPassword)
 
 Showhide.addEventListener("click", function(){
     if(Tinput.type == "password"){
@@ -54,5 +55,15 @@ toSend.addEventListener("click", () => {
             setTimeout(() => {
                 window.location.href = "home.html"
             }, 5000);
+        })
+        .catch(err => {
+            if(Tinput.value.trim() == ""){
+                message.style.display = "block"
+                message.textContent = "O campo está vazio"
+            }
+            else if(Tinput.value.trim() != userPassword){
+                message.style.display = "block"
+                message.textContent = "Senha incorreta"
+            }
         })
 })
